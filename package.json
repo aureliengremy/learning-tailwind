@@ -6,16 +6,21 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "url-loader": "^4.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass --include-path scss src/style/scss/main.scss -o src/style/css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "tailwind-css": "npx tailwindcss-cli build src/index.css -o src/style/css/tailwind.css"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +39,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
   }
 }
